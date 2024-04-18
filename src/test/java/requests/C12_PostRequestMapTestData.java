@@ -3,15 +3,15 @@ package requests;
 import base_urls.JsonPlaceHolderBaseUrl;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
+import test_data.JsonPlaceHolderTestData;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.TreeMap;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
-public class C11_PostRequestMap extends JsonPlaceHolderBaseUrl {
+public class C12_PostRequestMapTestData extends JsonPlaceHolderBaseUrl {
 /*
      Given
        1) https://jsonplaceholder.typicode.com/todos
@@ -41,10 +41,7 @@ public class C11_PostRequestMap extends JsonPlaceHolderBaseUrl {
         spec.pathParams("first", "todos");
 
         //Set the expected data(Payload) --> Prepare it as Map
-        Map<String, Object> expectedData = new HashMap<>();
-        expectedData.put("userId",55);
-        expectedData.put("title","Tidy your room");
-        expectedData.put("completed",false);
+        Map<String, Object> expectedData = JsonPlaceHolderTestData.expectedDataMap(55,"Tidy your room", false);
 
         System.out.println("expectedData = " + expectedData);
 

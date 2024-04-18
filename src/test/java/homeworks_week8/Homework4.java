@@ -1,4 +1,4 @@
-package homework;
+package homeworks_week8;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
