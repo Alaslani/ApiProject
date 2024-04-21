@@ -23,8 +23,6 @@ public class Homework10 extends PetStoreBaseTest {
                 .extract()
                 .response();
 
-
-
         // Assert there are more than 100 pets available
         response.then().body("size()", greaterThan(100));
 
