@@ -1,4 +1,4 @@
-package homeworks_week8;
+package homeworks.Week8;
 
 import base_urls.ReqResBaseUrl;
 import io.restassured.response.Response;

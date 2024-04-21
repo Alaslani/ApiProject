@@ -1,7 +1,9 @@
-package homeworks_week8;
+package homeworks.Week8;
 
 import base_urls.ReqResBaseUrl; // Importing the ReqResBaseUrl class
 import io.restassured.response.Response;
+import org.testng.annotations.Test;
+
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
@@ -27,7 +29,7 @@ import java.util.Map;
      */
 
 public class Homework8 extends ReqResBaseUrl { // Extending ReqResBaseUrl
-
+@Test
     public static void main(String[] args) {
         // Initialize base settings from the parent class
         new Homework8().setUp();
