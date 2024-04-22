@@ -3,11 +3,13 @@ import io.restassured.RestAssured;
 import io.restassured.specification.RequestSpecification;
 import org.junit.BeforeClass;
 
-public class PetStoreBaseTest {
+public class automatioBaseUrl {
     protected static RequestSpecification spec;
 
     @BeforeClass
     public static void setUpClass() {
-        RestAssured.baseURI = "https://petstore.swagger.io/v2";
+        RestAssured.baseURI = "https://automationexercise.com/api";
+
     }
 }
+
