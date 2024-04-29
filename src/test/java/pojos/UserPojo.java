@@ -10,7 +10,7 @@ public class UserPojo {
     private String phone;
     private Integer userStatus; // Typically represents if the user is active
 
-    public UserPojo() {
+    public UserPojo(int id, String testUser, String test, String mail, String password, int i, int i1, String s) {
     }
 
     public UserPojo(Integer id, String username, String firstName, String lastName, String email, String password, String phone, Integer userStatus) {
