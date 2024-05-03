@@ -5,6 +5,8 @@ import base_urls.PetStoreBaseTest;
 import pojos.PetPojo;
 import static io.restassured.RestAssured.given;
 import org.junit.Test;
+import pojos.PetPojo1;
+
 /*/
 //Write an automation test that will create, read, update, delete a 'pet' using the "https://petstore.swagger.io/" document
 (All actions must be done on same pet)
@@ -16,7 +18,7 @@ public class Homework12 extends PetStoreBaseTest {
     public void testPetLifecycle() {
 
         // Create a new Pet
-        PetPojo myPet = new PetPojo(99123, "Fido", "available");
+        PetPojo1 myPet = new PetPojo1(99123, "Fido", "available");
         given()
                 .contentType("application/json")
                 .body(myPet)

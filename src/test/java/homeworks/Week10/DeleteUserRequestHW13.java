@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class DeleteUserRequest extends PetStoreBaseTest {
+public class DeleteUserRequestHW13 extends PetStoreBaseTest {
 
     @Test
     public void deleteUserTest() {

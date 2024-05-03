@@ -3,8 +3,9 @@ package requests;
 import base_urls.JsonPlaceHolderBaseUrl;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
-import pojos.PetPojo;
+import test_data.JsonPlaceHolderTestData;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
@@ -36,7 +37,7 @@ public class C14_PatchRequest extends JsonPlaceHolderBaseUrl {
         spec.pathParams("first", "todos", "second", "198");
 
         //Set the expected data
-        Map<String, Object> expectedData = PetPojo.JsonPlaceHolderTestData.expectedDataMap(null, "Read Books", null);
+        Map<String, Object> expectedData = JsonPlaceHolderTestData.expectedDataMap(null, "Read Books", null);
         System.out.println("expectedData = " + expectedData);
 
         //Send the request and get the response
@@ -44,7 +45,7 @@ public class C14_PatchRequest extends JsonPlaceHolderBaseUrl {
         response.prettyPrint();
 
         //Do assertion
-        Map<String, Object> actualData = response.as(Map.class);
+        Map<String, Object> actualData = response.as(Map.class);//De-Serialization
         System.out.println("actualData = " + actualData);
 
         assertEquals(response.statusCode(), 200);

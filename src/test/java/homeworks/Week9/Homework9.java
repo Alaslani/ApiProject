@@ -2,9 +2,10 @@ package homeworks.Week9;
 
 import base_urls.PetStoreBaseTest;
 import io.restassured.response.Response;
-import pojos.UserPojo;
+
 import static io.restassured.RestAssured.given;
 import org.junit.Test;
+import pojos.UserPojo;
 
 /*
 Write an automation test that will create a 'user' using the "https://petstore.swagger.io/" document

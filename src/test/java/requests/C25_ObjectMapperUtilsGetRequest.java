@@ -1,10 +1,9 @@
 package requests;
 
 import base_urls.BookerBaseUrl;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
-import pojos.BookingPojo;
+import pojos.Employee;
 import utilities.ObjectMapperUtils;
 
 import java.util.Map;
@@ -54,7 +53,7 @@ public class C25_ObjectMapperUtilsGetRequest extends BookerBaseUrl {
                 }
                 """;
 
-        Map expectedData = ObjectMapperUtils.convertJsonToJava(strJson, Map.class);
+        Map expectedData = ObjectMapperUtils.convertJsonToJava(strJson, Map.class, Employee.class);
         System.out.println("expectedData = " + expectedData);
 
         //Send the request and get the response
@@ -62,7 +61,7 @@ public class C25_ObjectMapperUtilsGetRequest extends BookerBaseUrl {
         response.prettyPrint();
 
         //Do assertion
-        Map actualData = ObjectMapperUtils.convertJsonToJava(response.asString(), Map.class);
+        Map actualData = ObjectMapperUtils.convertJsonToJava(response.asString(), Map.class, Employee.class);
         System.out.println("actualData = " + actualData);
 
         assertEquals(response.statusCode(), 200);

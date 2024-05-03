@@ -5,6 +5,7 @@ import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import pojos.BookingPojo;
 import pojos.BookingResponsePojo;
+import pojos.Employee;
 
 
 import static io.restassured.RestAssured.given;
@@ -66,7 +67,7 @@ public class C26_ObjectMapperUtilsPostRequest extends BookerBaseUrl {
                 }
                 """;
 
-        BookingPojo expectedData = convertJsonToJava(strJson, BookingPojo.class);
+        BookingPojo expectedData = convertJsonToJava(strJson, BookingPojo.class, Employee.class);
         System.out.println("expectedData = " + expectedData);
 
         //Send the request and get the response
@@ -74,7 +75,7 @@ public class C26_ObjectMapperUtilsPostRequest extends BookerBaseUrl {
         response.prettyPrint();
 
         //Do assertion
-        BookingResponsePojo actualData = convertJsonToJava(response.asString(), BookingResponsePojo.class);
+        BookingResponsePojo actualData = convertJsonToJava(response.asString(), BookingResponsePojo.class, Employee.class);
         System.out.println("actualData = " + actualData);
 
         assertEquals(response.statusCode(), 200);

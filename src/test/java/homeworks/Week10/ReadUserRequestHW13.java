@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class ReadUserRequest extends PetStoreBaseTest {
+public class ReadUserRequestHW13 extends PetStoreBaseTest {
 
     @Test
     public void readUserTest() {

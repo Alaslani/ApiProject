@@ -3,8 +3,9 @@ package requests;
 import base_urls.JsonPlaceHolderBaseUrl;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
-import pojos.PetPojo;
+import test_data.JsonPlaceHolderTestData;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
@@ -40,7 +41,7 @@ public class C12_PostRequestMapTestData extends JsonPlaceHolderBaseUrl {
         spec.pathParams("first", "todos");
 
         //Set the expected data(Payload) --> Prepare it as Map
-        Map<String, Object> expectedData = PetPojo.JsonPlaceHolderTestData.expectedDataMap(55,"Tidy your room", false);
+        Map<String, Object> expectedData = JsonPlaceHolderTestData.expectedDataMap(55,"Tidy your room", false);
 
         System.out.println("expectedData = " + expectedData);
 

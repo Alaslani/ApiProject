@@ -7,7 +7,7 @@ import pojos.UserPojo;
 
 import static io.restassured.RestAssured.given;
 
-public class CreateUserRequest extends PetStoreBaseTest {
+public class CreateUserRequestHW13 extends PetStoreBaseTest {
 
     @Test
     public void createUserTest() {

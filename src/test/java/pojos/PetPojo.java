@@ -1,69 +1,73 @@
 package pojos;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 public class PetPojo {
-    private int id;
+    private List<String> photoUrls;
     private String name;
-    private String status;  // Available statuses: available, pending, sold
+    private Integer id;
+    private Category category;
+    private List<TagsItem> tags;
+    private String status;
 
-    public PetPojo() {
-    }
-
-    public PetPojo(int id, String name, String status) {
+    public void setId(Integer id) {
         this.id = id;
-        this.name = name;
-        this.status = status;
     }
 
-    // Getters and setters
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-
+    public void setPhotoUrls(List<String> photoUrls) {
+        this.photoUrls = photoUrls;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public String getStatus() {
-        return status;
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public void setTags(List<TagsItem> tags) {
+        this.tags = tags;
     }
 
     public void setStatus(String status) {
         this.status = status;
     }
 
-    // toString method for easy printing and logging
-    @Override
-    public String toString() {
-        return "Pet{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", status='" + status + '\'' +
-                '}';
+    public List<String> getPhotoUrls() {
+        return photoUrls;
     }
 
-    public static class JsonPlaceHolderTestData {
+    public String getName() {
+        return name;
+    }
 
-        // With this method, we can create test data in the test class without creating a new map.
+    public Integer getId() {
+        return id;
+    }
 
-        public static Map<String, Object> expectedDataMap(Integer userId, String title, Boolean completed) {
+    public Category getCategory() {
+        return category;
+    }
 
-            Map<String, Object> expectedData = new HashMap<>();
-            expectedData.put("userId", userId);
-            expectedData.put("title", title);
-            expectedData.put("completed", completed);
+    public List<TagsItem> getTags() {
+        return tags;
+    }
 
-            return expectedData;
+    public String getStatus() {
+        return status;
+    }
 
-        }
-
-
+    @Override
+    public String toString() {
+        return
+                "PetPojo{" +
+                        "photoUrls = '" + photoUrls + '\'' +
+                        ",name = '" + name + '\'' +
+                        ",id = '" + id + '\'' +
+                        ",category = '" + category + '\'' +
+                        ",tags = '" + tags + '\'' +
+                        ",status = '" + status + '\'' +
+                        "}";
     }
 }
